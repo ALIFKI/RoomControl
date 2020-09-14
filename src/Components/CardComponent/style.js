@@ -19,7 +19,7 @@ const Style = StyleSheet.create({
     display : 'flex',
     flexDirection : "column",
     justifyContent : 'center',
-    backgroundColor : 'rgba(255, 255, 255,0.6)',
+    backgroundColor : 'white',
     borderRadius : 30,
     padding : 10
   },
@@ -41,17 +41,24 @@ const Style = StyleSheet.create({
     color : '#131313',
     fontSize: 17
   },
+  card: {
+    flexDirection : 'column',
+    width : 140,
+    height : 200,
+    borderRadius : 20,
+    padding : 20,
+    marginTop : 15,
+    justifyContent : 'space-between',
+    alignItems : "flex-start"
+  },
   mainCard : {
     paddingTop : 20,
     flex : 1,
-    flexWrap : 'wrap',
     flexDirection : 'row',
     justifyContent : 'space-around',
-    // alignItems: 'flex-start',
-    flexShrink : 1,
+    alignItems : 'center'
   },
   deviceTxt : {
-    color: 'white',
     fontFamily : 'Poppins-Regular',
     fontSize : 13
   }
