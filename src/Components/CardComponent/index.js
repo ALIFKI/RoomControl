@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, Switch, Animated } from 'react-native'
+import { Text, View, Switch, Animated, TouchableOpacity } from 'react-native'
 import Style from './style'
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import ToggleSwitch from 'toggle-switch-react-native'
 // import Animated, { set,Easing } from 'react-native-reanimated'
 import {TapGestureHandler,State} from 'react-native-gesture-handler'
-
+import * as RootNavigation from '../../Routes/RootNavigation'
 // const {Value,event,block,eq,cond,startClock,stopClock,debug,timing,clockRunning,Clock} = Animated;
 const MyAnimatedIcon = Animated.createAnimatedComponent(IonIcon)
 
@@ -35,6 +35,7 @@ export default class CardControl extends Component {
     })
     render() {
         return (
+            <TouchableOpacity onPress={()=>{RootNavigation.navigate('Device')}}>
             <Animated.View style={[Style.card,{backgroundColor : this.bgColor}]}>
                 <View style={Style.iconView}>
                     <MyAnimatedIcon name={this.props.icon} size={40} style={{color:this.textColor}}/>
@@ -53,6 +54,7 @@ export default class CardControl extends Component {
                     onToggle={(e)=>{this.setState({isEnable : e},this.toggleView)}}
                     />
             </Animated.View>
+            </TouchableOpacity>
         )
     }
 }

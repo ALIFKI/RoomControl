@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView, Switch, } from 'react-native';
 import Style from './style';
 import LinearGradient from 'react-native-linear-gradient';
-import IonIcon from 'react-native-vector-icons/Ionicons'
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import CardControl from '../../Components/CardComponent';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 export class HomeScreen extends Component {
   constructor(props) {
     super(props)
@@ -25,6 +26,10 @@ export class HomeScreen extends Component {
       })
     }
   }
+  onClick = ()=>{
+    this.props.navigation.navigate('Device')
+  }  
+
   render() {    
     return (
     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['rgba(194, 179, 212,0)', '#C4B4D3']} style={{ flex:1,flexDirection : 'row'}}>
@@ -35,7 +40,7 @@ export class HomeScreen extends Component {
           <View style={Style.cardControl}>
             <View style={Style.titleHeader}>
               <View>
-              <Text style={Style.countDevice}>A total Of 4 Device</Text>
+              <Text style={Style.countDevice}>A total of 4 Device</Text>
               <Text style={Style.room}>Living Room</Text>
               </View>
               <View>
