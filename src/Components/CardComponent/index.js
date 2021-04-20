@@ -17,6 +17,8 @@ export default class CardControl extends Component {
             isEnable : false
         }
     }
+    componentDidMount(){
+    }
     toggleView = () => {
         Animated.timing(this.animated, {
             toValue: this.state.isEnable ? 0 : 1,
@@ -35,7 +37,7 @@ export default class CardControl extends Component {
     })
     render() {
         return (
-            <TouchableOpacity onPress={()=>{RootNavigation.navigate('Device')}}>
+            <TouchableOpacity onPress={()=>{RootNavigation.navigate(this.props.routeTo)}}>
             <Animated.View style={[Style.card,{backgroundColor : this.bgColor}]}>
                 <View style={Style.iconView}>
                     <MyAnimatedIcon name={this.props.icon} size={40} style={{color:this.textColor}}/>

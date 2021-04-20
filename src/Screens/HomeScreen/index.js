@@ -51,20 +51,24 @@ export class HomeScreen extends Component {
                 <CardControl
                 icon='hardware-chip-outline'
                 text='Smart Air Conditioner'
+                routeTo='Device'
                 color='#5A06DB'  
                 />
                 <CardControl
                 icon='tv-outline'
                 text='Smart LED Vision'
+                routeTo='Camera'
                 color='#D31521'  
                 />
                 <CardControl
                 icon='game-controller-outline'
                 text='Smart Game Console'
+                routeTo='Device'
                 color='#3C3B3F'  
                 />
                 <CardControl
                 icon='headset-outline'
+                routeTo='Device'
                 text='Smart Music Player'
                 color='#f5af19'  
                 />

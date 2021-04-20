@@ -10,6 +10,10 @@ target 'RoomControll' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNHoleView', :path => '../node_modules/react-native-hole-view'
+
   target 'RoomControllTests' do
     inherit! :complete
     # Pods for testing
