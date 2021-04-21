@@ -42,7 +42,7 @@ export default class CameraScreen extends Component {
                     }}
                     captureAudio={false}
                     style={{flex: 1}}
-                    type={RNCamera.Constants.Type.back}
+                    type={RNCamera.Constants.Type.front}
                     androidCameraPermissionOptions={{
                         title: 'Permission to use camera',
                         message: 'We need your permission to use your camera',
@@ -53,7 +53,11 @@ export default class CameraScreen extends Component {
                 </View> */}
                     <RNHoleView
                         style={{ position: 'absolute', width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)' }}
-                        holes={[{ x: 30, y: 200, width: 300, height: 200, borderRadius: 10 }]}>
+                        holes={[{ x: 35, y: 350, width: 290, height: 190, borderRadius: 10 }]}>
+                    </RNHoleView>
+                    <RNHoleView
+                        style={{ position: 'absolute', width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)' }}
+                        holes={[{ x: 80, y: 90, width: 200, height: 200, borderRadius: 100 }]}>
                     </RNHoleView>
                     {/* <View style={Style.buttonCapture}> */}
                         <TouchableOpacity style={Style.btn} onPress={(e)=>this.takePicture()}>
