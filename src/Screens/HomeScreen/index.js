@@ -5,6 +5,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import CardControl from '../../Components/CardComponent';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import * as RNLocalize from "react-native-localize";
+import { setConfig,translate } from '../../Utils/translate'
+
 export class HomeScreen extends Component {
   constructor(props) {
     super(props)
@@ -12,8 +15,21 @@ export class HomeScreen extends Component {
     this.state = {
     isEnable : true
     }
+    setConfig();
   }
 
+  componentDidMount() {
+    RNLocalize.addEventListener("change", this.handleLocalizationChange);
+  }
+
+  componentWillUnmount() {
+    RNLocalize.removeEventListener("change", this.handleLocalizationChange);
+  }
+
+  handleLocalizationChange = () => {
+    setConfig();
+    this.forceUpdate();
+  };
   onChange = ()=>{
     if(this.state.isEnable == true){
       this.setState({
@@ -35,7 +51,7 @@ export class HomeScreen extends Component {
     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['rgba(194, 179, 212,0)', '#C4B4D3']} style={{ flex:1,flexDirection : 'row'}}>
       <ScrollView style={Style.content}>
           <View style={Style.header}>
-            <Text style={Style.username}> Hello, User </Text>
+            <Text style={Style.username}> { translate("Hello") },User </Text>
           </View>
           <View style={Style.cardControl}>
             <View style={Style.titleHeader}>

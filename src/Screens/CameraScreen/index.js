@@ -15,7 +15,7 @@ export default class CameraScreen extends Component {
     if (this.camera && !this.state.takingPic) {
 
       let options = {
-        quality: 0.85,
+        quality: 1,
         fixOrientation: true,
         forceUpOrientation: true,
       };
@@ -24,6 +24,7 @@ export default class CameraScreen extends Component {
 
       try {
          const data = await this.camera.takePictureAsync(options);
+         console.log(data)
          Alert.alert('Success', JSON.stringify(data));
       } catch (err) {
         Alert.alert('Error', 'Failed to take picture: ' + (err.message || err));
